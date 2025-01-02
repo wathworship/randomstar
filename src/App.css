@@ -1,0 +1,147 @@
+.app {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: url('/public/images/2235657.png') no-repeat center center fixed;
+  background-size: full;
+  font-family: Arial, sans-serif;
+  color: black;
+}
+
+.sky {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.star {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background-color: yellow;
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  ); /* รูปดาว */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  text-shadow: 0 0 3px #000;
+}
+
+.star:hover {
+  opacity: 0.8; /* ทำให้ดาวโปร่งใสเมื่อชี้ไปที่ดาว */
+}
+
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.message {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* สไตล์ทั่วไปของดาว */
+.star {
+  position: absolute;
+  width: 60px;  /* ขนาดเริ่มต้นของดาว */
+  height: 60px;
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease; /* เพิ่ม transition สำหรับการซูม */
+}
+
+/* ซูมดาวเมื่อเมาส์ชี้ */
+.star:hover {
+  transform: scale(3); /* ขยายขนาดดาวเมื่อเมาส์ชี้ */
+  z-index: 10; /* ให้ดาวที่ซูมมีลำดับหน้ากว่า */
+}
+
+/* สไตล์ของปุ่มเปิด Modal */
+.open-modal-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.open-modal-button:hover {
+  background-color: #45a049;
+}
+
+/* สไตล์ของ modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  max-height: 70%;
+  overflow-y: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+button {
+  padding: 10px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #e53935;
+}
